@@ -1,3 +1,4 @@
+import 'package:catalog_app/utils/routes.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatelessWidget {
@@ -19,7 +20,7 @@ class LoginPage extends StatelessWidget {
           const Text(
             "Welcome",
             style: TextStyle(
-              fontSize: 24,
+              fontSize: 28,
               fontWeight: FontWeight.bold,
             ),
           ),
@@ -32,24 +33,25 @@ class LoginPage extends StatelessWidget {
             child: Column(
               children: [
                 TextFormField(
-                  decoration: const InputDecoration(
+                  decoration: InputDecoration(
                     hintText: "Enter username",
                     labelText: "Username",
                   ),
                 ),
                 TextFormField(
                   obscureText: true,
-                  decoration: const InputDecoration(
+                  decoration: InputDecoration(
                     hintText: "Enter password",
                     labelText: "Password",
                   ),
                 ),
                 const SizedBox(
-                  height: 20.0,
+                  height: 40.0,
                 ),
                 ElevatedButton(
+                  style: TextButton.styleFrom(minimumSize: const Size(150, 40)),
                   onPressed: () {
-                    print("Hi Anshuman");
+                    Navigator.pushNamed(context, MyRoutes.homeRoute);
                   },
                   child: const Text("Login"),
                 )
